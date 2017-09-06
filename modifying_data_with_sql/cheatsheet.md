@@ -182,3 +182,15 @@ To reset the state of the database to before the beginning  of the transaction:
 ```
 ROLLBACK;
 ````
+
+
+##  Reset identity seed after deleting records in SQL Server
+
+
+``
+DELETE FROM [Table]
+
+DBCC CHECKIDENT ('[Table]', RESEED, 0)
+GO
+``
+
